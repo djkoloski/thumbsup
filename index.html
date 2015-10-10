@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ThumbsUp</title>
+	<script type="text/javascript">
+function ThumbsUp() {
+	var input = document.getElementById('value_in').value.split('\n');
+	var output = [];
+
+	for (var l = 0; l < input.length; ++l) {
+		var buf = ['', '', '', '', ''];
+
+		for (var i = 0; i < input[l].length; ++i) {
+			var letter = font[input[l][i]].split(' ').join('\u00A0\u00A0\u00A0\u00A0').split('X').join('(y)\u202F').split('\n');
+			for (var j = 0; j < 5; ++j)
+				buf[j] += letter[j] + '\u00A0\u00A0';
+		}
+
+		output.push(buf.join('\n'));
+		output.push('\n');
+	}
+
+	document.getElementById('value_out').value = ':>\n' + output.join('\n');
+}
+
+var font = {
+' ':'\
+    \n\
+    \n\
+    \n\
+    \n\
+   ',
+'a':'\
+     \n\
+ XX  \n\
+X  X \n\
+X  X \n\
+ XX X',
+'b':'\
+X   \n\
+XXX \n\
+X  X\n\
+X  X\n\
+XXX ',
+'c':'\
+    \n\
+ XXX\n\
+X   \n\
+X   \n\
+ XXX',
+'d':'\
+   X\n\
+ XXX\n\
+X  X\n\
+X  X\n\
+ XXX',
+'e':'\
+ XX \n\
+X  X\n\
+XXXX\n\
+X   \n\
+ XX ',
+'f':'\
+  XX\n\
+ X  \n\
+XXX \n\
+ X  \n\
+ X  ',
+'g':'\
+ XX \n\
+X  X\n\
+ XXX\n\
+   X\n\
+ XX ',
+'h':'\
+X   \n\
+X X \n\
+XX X\n\
+X  X\n\
+X  X',
+'i':'\
+ X \n\
+   \n\
+XX \n\
+ X \n\
+XXX',
+'j':'\
+ X\n\
+  \n\
+XX\n\
+ X\n\
+X ',
+'k':'\
+X  \n\
+X  \n\
+X X\n\
+XX \n\
+X X',
+'l':'\
+X \n\
+X \n\
+X \n\
+X \n\
+ X',
+'m':'\
+      \n\
+X X X \n\
+XX X X\n\
+X    X\n\
+X    X',
+'n':'\
+     \n\
+X XX \n\
+XX  X\n\
+X   X\n\
+X   X',
+'o':'\
+    \n\
+ XX \n\
+X  X\n\
+X  X\n\
+ XX ',
+'p':'\
+ XX \n\
+X  X\n\
+X  X\n\
+XXX \n\
+X   ',
+'q':'\
+ XX \n\
+X  X\n\
+X  X\n\
+ XXX\n\
+   X',
+'r':'\
+   \n\
+X X\n\
+XX \n\
+X  \n\
+X  ',
+'s':'\
+ XX \n\
+X   \n\
+ XX \n\
+   X\n\
+ XX ',
+'t':'\
+ X \n\
+XXX\n\
+ X \n\
+ X \n\
+ X ',
+'u':'\
+     \n\
+X   X\n\
+X   X\n\
+X   X\n\
+ XXX ',
+'v':'\
+      \n\
+X    X\n\
+X    X\n\
+ X  X \n\
+  XX  ',
+'w':'\
+       \n\
+X     X\n\
+X     X\n\
+X  X  X\n\
+ XX XX ',
+'x':'\
+    \n\
+X  X\n\
+ XX \n\
+ XX \n\
+X  X',
+'y':'\
+    \n\
+X  X\n\
+ XXX\n\
+   X\n\
+ XX ',
+'z':'\
+    \n\
+XXXX\n\
+  X \n\
+ X  \n\
+XXXX',
+'.':'\
+  \n\
+  \n\
+  \n\
+XX\n\
+XX',
+'(':'\
+ X\n\
+X \n\
+X \n\
+X \n\
+ X',
+')':'\
+X \n\
+ X\n\
+ X\n\
+ X\n\
+X ',
+':':'\
+ \n\
+X\n\
+ \n\
+X\n\
+ ',
+'>':'\
+  \n\
+X \n\
+ X\n\
+X \n\
+  ',
+'<':'\
+  \n\
+ X\n\
+X \n\
+ X\n\
+  ',
+'@':'\
+ \n\
+X\n\
+ \n\
+X\n\
+ '
+};
+	</script>
+</head>
+<body>
+	<div>
+		<textarea id="value_in" rows="16" cols="48"></textarea>
+		<button onclick="ThumbsUp()">&#x1f44d;</button>
+		<textarea id="value_out" rows="16" cols="48"></textarea>
+	</div>
+	<p>
+		How to use:
+	</p>
+	<p>
+		Type your test into the left textbox, hit the button, then copy and paste the right textbox into Facebook Messenger. Thumbs!
+	</p>
+	<p>
+		Lines of text too long will not display correctly. About 5 characters of text per line should be about right. Your mileage may vary.
+	</p>
+</body>
+</html>
