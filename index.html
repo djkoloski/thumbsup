@@ -4,7 +4,7 @@
 	<title>ThumbsUp</title>
 	<script type="text/javascript">
 function ThumbsUp() {
-	var input = document.getElementById('value_in').value.split('\n');
+	var input = document.getElementById('value_in').value.toLowerCase().split('\n');
 	var output = [];
 
 	for (var l = 0; l < input.length; ++l) {
@@ -244,7 +244,7 @@ X\n\
 		Type your test into the left textbox, hit the button, then copy and paste the right textbox into Facebook Messenger. Thumbs!
 	</p>
 	<p>
-		Lines of text too long will not display correctly. About 5 characters of text per line should be about right. Your mileage may vary.
+		Uppercase letters will be rendered as lowercase ones. Do not use punctuation. Lines of text too long will not display correctly. About 5 characters of text per line should be about right. Your mileage may vary.
 	</p>
 </body>
 </html>
